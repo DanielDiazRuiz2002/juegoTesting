@@ -16,16 +16,19 @@ public class MovimientoJugador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Obtener la entrada del teclado
-        float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))
+        {
+            // Obtener la entrada del teclado
+            float moveX = Input.GetAxis("Horizontal");
+            float moveY = Input.GetAxis("Vertical");
 
-        // Calcular el vector de movimiento
+            // Calcular el vector de movimiento
 
-        Vector2 movement = new Vector2(moveX, moveY) * speed * Time.fixedDeltaTime;
-        Vector2 newPosition = rb.position + movement;
+            Vector2 movement = new Vector2(moveX, moveY) * speed * Time.fixedDeltaTime;
+            Vector2 newPosition = rb.position + movement;
 
-        rb.MovePosition(newPosition);
+            rb.MovePosition(newPosition);
+        }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {

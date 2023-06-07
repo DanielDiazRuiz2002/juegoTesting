@@ -411,7 +411,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: En
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 78f6a689045b5464ca597202c3a9c315, type: 2}
   m_sharedMaterial: {fileID: -1536425800446271438, guid: 78f6a689045b5464ca597202c3a9c315, type: 2}
@@ -1081,6 +1081,7 @@ GameObject:
   - component: {fileID: 1612340029}
   - component: {fileID: 1612340030}
   - component: {fileID: 1612340031}
+  - component: {fileID: 1612340032}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -1167,7 +1168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55edcf9662469fb4882334d78e57a99f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 70
+  speed: 750
 --- !u!61 &1612340030
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1215,6 +1216,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1612340032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612340026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf98284864d70d40ba6063f2d5deac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 744449259}
 --- !u!1 &1816603943
 GameObject:
   m_ObjectHideFlags: 0
