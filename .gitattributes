@@ -1,0 +1,6 @@
+[[:space:]]Over[[:space:]]Write/Library/PackageCache/com.unity.burst@1.6.0/.Runtime/hostmac/dsymutil filter=lfs diff=lfs merge=lfs -text
+Over[[:space:]]Write/Library/PackageCache/com.unity.burst@1.6.0/.Runtime/libburst-llvm-11.dylib filter=lfs diff=lfs merge=lfs -text
+Over[[:space:]]Write/Library/ArtifactDB filter=lfs diff=lfs merge=lfs -text
+Over[[:space:]]Write/Library/PackageCache/com.unity.burst@1.6.0/.Runtime/hostlin/lld filter=lfs diff=lfs merge=lfs -text
+Over[[:space:]]Write filter=lfs diff=lfs merge=lfs -text
+README.md filter=lfs diff=lfs merge=lfs -text
