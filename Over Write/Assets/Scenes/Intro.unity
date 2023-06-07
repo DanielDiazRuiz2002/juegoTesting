@@ -970,7 +970,7 @@ GameObject:
   - component: {fileID: 1580629585}
   m_Layer: 0
   m_Name: paredSup
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1168,7 +1168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55edcf9662469fb4882334d78e57a99f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 750
+  speed: 850
 --- !u!61 &1612340030
 BoxCollider2D:
   m_ObjectHideFlags: 0
