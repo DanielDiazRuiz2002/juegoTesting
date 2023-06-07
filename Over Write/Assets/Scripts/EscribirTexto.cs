@@ -5,7 +5,10 @@ using TMPro;
 
 public class EscribirTexto : MonoBehaviour
 {
+    public TMP_Text TMPComparar;
     public TMP_Text textMeshPro;
+    public Color similarColor;
+    public Color differentColor;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +29,25 @@ public class EscribirTexto : MonoBehaviour
                         textMeshPro.text = textMeshPro.text.Substring(0, textMeshPro.text.Length - 1);
                     }
                 }
-                else
+                else if (c != '\n' && c != '\r') // Si el carácter no es un salto de línea
                 {
                     textMeshPro.text += c;
+                }
+            }
+
+            string originalText = textMeshPro.text;
+            string compareToText = TMPComparar.text;
+
+            int minLength = Mathf.Min(originalText.Length, compareToText.Length);
+
+            textMeshPro.color = similarColor;
+            for (int i = 0; i < minLength; i++)
+            {
+                if (originalText[i] != compareToText[i])
+                {
+                    // Si los caracteres difieren, se considera diferente
+                    textMeshPro.color = differentColor;
+                    return;
                 }
             }
         }

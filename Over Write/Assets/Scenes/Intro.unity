@@ -1228,7 +1228,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf98284864d70d40ba6063f2d5deac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TMPComparar: {fileID: 1529126675}
   textMeshPro: {fileID: 744449259}
+  similarColor: {r: 0, g: 0, b: 0, a: 1}
+  differentColor: {r: 0.7075472, g: 0.0360448, b: 0.0360448, a: 1}
 --- !u!1 &1816603943
 GameObject:
   m_ObjectHideFlags: 0
