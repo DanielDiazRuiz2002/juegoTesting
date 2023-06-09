@@ -31,7 +31,7 @@ public class MovimientoJugador : MonoBehaviour
             moveY = -1f;
 
         // Calcular el vector de movimiento
-        Vector2 movement = new Vector2(moveX, moveY).normalized * speed * Time.fixedDeltaTime;
+        Vector2 movement = new Vector2(moveX * 2, moveY * 5).normalized * speed * Time.fixedDeltaTime;
         Vector2 newPosition = rb.position + movement;
 
         rb.MovePosition(newPosition);
