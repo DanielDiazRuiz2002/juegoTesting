@@ -22,16 +22,22 @@ public class MovimientoJugador : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow))
             moveX = 1f;
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
             moveX = -1f;
 
         if (Input.GetKey(KeyCode.UpArrow))
             moveY = 1f;
-        else if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
             moveY = -1f;
 
-        // Calcular el vector de movimiento
-        Vector2 movement = new Vector2(moveX * 2, moveY * 5).normalized * speed * Time.fixedDeltaTime;
+        Vector2 movement = new Vector2(moveX, moveY);
+
+        // Reducir la velocidad de movimiento hacia la izquierda
+        if (moveX != 0f)
+            movement *= 0.4f;
+
+        movement *= speed * Time.fixedDeltaTime;
+
         Vector2 newPosition = rb.position + movement;
 
         rb.MovePosition(newPosition);

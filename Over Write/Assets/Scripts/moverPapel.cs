@@ -76,6 +76,5 @@ public class MoverPapel : MonoBehaviour
             papel_2.position = new Vector3(papel_1.position.x + 2400f, papel_2.position.y, papel_2.position.z);
             cantSaltosCtrl++;
         }
-        Debug.Log(widthText_2);
     }
 }
