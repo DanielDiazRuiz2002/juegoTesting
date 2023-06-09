@@ -34,7 +34,7 @@ public class MovimientoJugador : MonoBehaviour
 
         // Reducir la velocidad de movimiento hacia la izquierda
         if (moveX != 0f)
-            movement *= 0.4f;
+            movement *= 0.35f;
 
         movement *= speed * Time.fixedDeltaTime;
 
