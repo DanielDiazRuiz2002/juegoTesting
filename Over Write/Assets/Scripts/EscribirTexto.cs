@@ -13,7 +13,7 @@ public class EscribirTexto : MonoBehaviour
     public RectTransform tinta;
 
     private Vector2 currentPosition;
-    private float posObj;
+    public float posObj;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +57,7 @@ public class EscribirTexto : MonoBehaviour
             int minLength = Mathf.Min(originalText.Length, compareToText.Length);
 
             textMeshPro.color = similarColor;
-            if (tinta.anchoredPosition.x <= -96f)
+            if (posObj <= -96f)
             {
                 textMeshPro.color = noTintColor;
             }
@@ -71,14 +71,14 @@ public class EscribirTexto : MonoBehaviour
                 }
             }
         }
-        if (posObj < currentPosition.x)
+        /*if (posObj < currentPosition.x)
         {
             //currentPosition.x = currentPosition.x - 10f;
             float moveSpeed = 3f; // Define la velocidad de movimiento
             Vector2 targetPosition = new Vector2(posObj, currentPosition.y);
             currentPosition = Vector2.Lerp(currentPosition, targetPosition, moveSpeed * Time.deltaTime);
             tinta.anchoredPosition = currentPosition;
-        }
+        }*/
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -86,14 +86,14 @@ public class EscribirTexto : MonoBehaviour
         {
             Vector2 currentPosition = tinta.anchoredPosition;
 
-            currentPosition.x = currentPosition.x + 39f;
+            posObj = posObj + 39f;
 
-            if(currentPosition.x > -3)
+            if(posObj > -3)
             {
-                currentPosition.x = -3;
+                posObj = -3;
             }
 
-            tinta.anchoredPosition = currentPosition;
+            // tinta.anchoredPosition = currentPosition;
 
             collision.gameObject.SetActive(false);
             // El objeto ha hecho contacto con el collider del personaje

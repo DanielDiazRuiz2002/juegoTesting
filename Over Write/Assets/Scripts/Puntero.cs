@@ -62,13 +62,11 @@ public class Puntero : MonoBehaviour
 
                         if (lastChar != ' ')
                         {
-                            Debug.Log(lastChar);
                             lastChar = textoEscrito.text[textoEscrito.text.Length - 2];
                             while (lastChar == ' ')
                             {
                                 count++; // Si el último carácter es un espacio, inicializamos count en 1
                                 lastChar = textoEscrito.text[textoEscrito.text.Length - 2 - count];
-                                Debug.Log(count);
                             }
                         }
                     }

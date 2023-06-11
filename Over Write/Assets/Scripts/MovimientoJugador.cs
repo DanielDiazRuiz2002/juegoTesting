@@ -9,6 +9,7 @@ public class MovimientoJugador : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer render;
     public RectTransform tinta;
+    public EscribirTexto tintaET;
 
     private bool choqueEnemigo;
     private Vector2 currentPosition;
@@ -24,10 +25,10 @@ public class MovimientoJugador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        posObj = tintaET.posObj;
         // Obtener la entrada del teclado solo si se presionan los botones direccionales
         float moveX = 0f;
         float moveY = 0f;
-        Debug.Log("XD");
 
         if (Input.GetKey(KeyCode.RightArrow)) {
             moveX = 1f;
@@ -58,14 +59,16 @@ public class MovimientoJugador : MonoBehaviour
 
         rb.MovePosition(newPosition);
 
-        if (posObj < currentPosition.x)
+        // if (posObj < currentPosition.x)
         {
             //currentPosition.x = currentPosition.x - 10f;
-            float moveSpeed = 1f; // Define la velocidad de movimiento
+            float moveSpeed = 5f; // Define la velocidad de movimiento
             Vector2 targetPosition = new Vector2(posObj, currentPosition.y);
             currentPosition = Vector2.Lerp(currentPosition, targetPosition, moveSpeed * Time.deltaTime);
             tinta.anchoredPosition = currentPosition;
         }
+
+        tintaET.posObj = posObj;
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -88,7 +91,7 @@ public class MovimientoJugador : MonoBehaviour
             rb.AddForce(pushVector, ForceMode2D.Impulse);
 
             currentPosition = tinta.anchoredPosition;
-            posObj = currentPosition.x - 18f;
+            tintaET.posObj = currentPosition.x - 18f;
         }
     }
 }
