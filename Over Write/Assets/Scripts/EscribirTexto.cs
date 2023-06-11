@@ -41,7 +41,7 @@ public class EscribirTexto : MonoBehaviour
                     {
                         textMeshPro.text += c;
                     }
-                    else if (currentPosition.x - 0.5f > -96f)
+                    else if (posObj > -96f)
                     {
                         textMeshPro.text += c;
 

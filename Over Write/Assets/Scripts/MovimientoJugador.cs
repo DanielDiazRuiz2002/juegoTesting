@@ -14,12 +14,14 @@ public class MovimientoJugador : MonoBehaviour
     private bool choqueEnemigo;
     private Vector2 currentPosition;
     private float posObj;
+    private Animator animator;
 
     private void Start()
     {
         posObj = 0;
         rb = GetComponent<Rigidbody2D>();
         render = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -51,7 +53,14 @@ public class MovimientoJugador : MonoBehaviour
             movement *= 0.35f;
 
         if (moveX != 0f)
+        {
             movement *= 0.85f;
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
 
         movement *= speed * Time.fixedDeltaTime;
 
@@ -92,6 +101,13 @@ public class MovimientoJugador : MonoBehaviour
 
             currentPosition = tinta.anchoredPosition;
             tintaET.posObj = currentPosition.x - 18f;
+        }
+    }
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            tintaET.posObj = currentPosition.x - 0.1f;
         }
     }
 }
