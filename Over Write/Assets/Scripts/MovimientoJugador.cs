@@ -107,7 +107,7 @@ public class MovimientoJugador : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            tintaET.posObj = currentPosition.x - 0.1f;
+            tintaET.posObj = tintaET.posObj - 1f;
         }
     }
 }
