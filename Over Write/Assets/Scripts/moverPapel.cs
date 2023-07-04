@@ -15,10 +15,12 @@ public class MoverPapel : MonoBehaviour
     private float initialOffset;
     private float initialCamPos;
     private int cantSaltosCtrl;
+    public int cambioPos;
 
     // Start is called before the first frame update
     void Start()
     {
+        cambioPos = 1;
         posAct = 0f;
         cantSaltosCtrl = 1;
         camara = Camera.main.transform;
@@ -36,7 +38,7 @@ public class MoverPapel : MonoBehaviour
         {
             RectTransform textosRectTransform = textos.GetComponent<RectTransform>();
             Vector2 currentPosition = textosRectTransform.anchoredPosition;
-            Vector2 targetPosition = new Vector2((170f - widthText) * 5f, currentPosition.y);
+            Vector2 targetPosition = new Vector2((170f - widthText) * 5f * cambioPos, currentPosition.y);
             float moveSpeed = 5f; // Define la velocidad de movimiento
 
             // Aplica una interpolación lineal para suavizar el movimiento
@@ -47,7 +49,7 @@ public class MoverPapel : MonoBehaviour
 
             RectTransform papelesRectTransform = papeles.GetComponent<RectTransform>();
             currentPosition = papelesRectTransform.anchoredPosition;
-            targetPosition = new Vector2(camara.transform.position.x + initialOffset - 1015f + (170f - widthText) * 5f, currentPosition.y);
+            targetPosition = new Vector2(camara.transform.position.x + initialOffset - 1015f + (170f - widthText) * 5f * cambioPos, currentPosition.y);
 
             // Aplica una interpolación lineal para suavizar el movimiento
             currentPosition = Vector2.Lerp(currentPosition, targetPosition, moveSpeed * Time.deltaTime);
